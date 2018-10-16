@@ -5,11 +5,22 @@
     <title></title>
   </head>
   <body>
-    <h1>EDIT PHOTO</h1>
+
+<form action="/photos/new" method="get">
+  <h1>PHOTO DROP</h1>
+
+  <input type="submit" value="Add New Photo">
+</form>
+
+
 
   <%  for ( let i = 0; i < photos.length; i++ ) { %>
-  <%=    photos[i].name %> </br>
-      <a href="<%=photos[i].image%>"></a> </br>
+  <h3><%=    photos[i].name %> </h3> </br>
+  <p> <%= photos[i].info %> </p> </br>
+      <img src="<%=photos[i].image%>" alt=""> </br>
+      <form action="/photos/<%=photos[i].id%>" method="get">
+        <input type="submit" name="" value="View Photo">
+      </form>
   <%  }; %>
   </body>
 </html>

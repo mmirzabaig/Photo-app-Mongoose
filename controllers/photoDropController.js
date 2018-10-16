@@ -24,6 +24,13 @@ router.post('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  photoDrop.findById(req.params.id, (err, photoFound) => {
+    res.render('./photoDrop/show.ejs', {
+      photo: photoFound
+    });
+  });
+});
 
 
 
