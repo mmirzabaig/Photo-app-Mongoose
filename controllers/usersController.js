@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   res.render('./users/index.ejs');
 })
 
-
+   
 
 
 
