@@ -31,6 +31,15 @@ router.post('/', (req, res) => {
   })
 })
 
+// create a show route for each user (index page for each user)
+router.get('/:id', (req, res) => {
+  console.log(req.params.id, ' This is your id!');
+  Users.findById(req.params.id, (err, userFound) => {
+    res.render('./users/show.ejs', {
+      user: userFound
+    });
+  });
+});
 
 
 module.exports = router;

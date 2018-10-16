@@ -10,7 +10,7 @@
   <h1>This is your users PAGE</h1>
 
 
-    <form action="users/new" method="GET">
+    <form action="/users/new" method="GET">
       <input type="submit" value="Add Your Info!">
     </form>
       <form action="/" method="GET">
@@ -20,6 +20,9 @@
   <% for ( let i = 0; i < users.length; i++ ) { %>
     <li>
   <%=  users[i].name %>
+  <form action="/users/<%=users[i].id%>" method="GET">
+    <input type="submit" value="Show <%=users[i].name%>'s Page">
+  </form>
   </li>
 <%  } %>
 </ul>
