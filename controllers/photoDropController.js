@@ -32,6 +32,13 @@ router.get('/:id', (req, res) => {
   });
 });
 
+router.delete('/:id', (req, res) => {
+  console.log(req.params.id);
+  photoDrop.findByIdAndRemove(req.params.id, (err, photoFound) => {
+    res.redirect('/photos');
+  });
+});
+
 
 
 module.exports = router;
