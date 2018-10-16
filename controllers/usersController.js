@@ -41,5 +41,14 @@ router.get('/:id', (req, res) => {
   });
 });
 
+// create a delete button for each user
+
+router.delete('/:id', (req, res) => {
+  console.log(req.params.id, ' This is the id you want to delete!');
+  Users.findByIdAndRemove(req.params.id, (err, userFound) => {
+    res.redirect('/users');
+  });
+});
+
 
 module.exports = router;
