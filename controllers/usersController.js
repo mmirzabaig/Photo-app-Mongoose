@@ -6,8 +6,10 @@ const Users = require('../models/users');
 
 // render the main users page
 router.get('/', (req, res) => {
-  res.render('./users/index.ejs', {
-    users: Users
+  Users.find({}, (err, usersFound) => {
+    res.render('./users/index.ejs', {
+      users: usersFound
+    });
   });
 })
 
