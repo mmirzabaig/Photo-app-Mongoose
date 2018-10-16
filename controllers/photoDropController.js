@@ -39,6 +39,14 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+router.get('/:id/edit', (req, res) => {
+  photoDrop.findById(req.params.id, (err, photoFound) => {
+    res.render('edit.ejs', {
+      photo: photoFound
+    });
+  });
+});
+// router.post
 
 
 module.exports = router;

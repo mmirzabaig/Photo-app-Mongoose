@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>EDIT PHOTO</h1>
-    <form action="/photos" method="post">
+    <form action="/photos/<%=photo.id%>?_method=PUT" method="POST">
       name: <input type="text" name="name"> </br>
       image: <input type="text" name="image" value="Post Image URL"> </br>
       info: <input type="text" name="info" value="Picture Info"> </br>
