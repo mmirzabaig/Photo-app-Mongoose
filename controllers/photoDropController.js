@@ -41,12 +41,18 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id/edit', (req, res) => {
   photoDrop.findById(req.params.id, (err, photoFound) => {
-    res.render('edit.ejs', {
+    res.render('./photoDrop/edit.ejs', {
       photo: photoFound
     });
   });
 });
-// router.post
+
+router.put('/:id', (req, res) => {
+  console.log(req.body, ' update body');
+  photoDrop.findByIdAndUpdate(req.params.id, req.body, (err, photoFound) => {
+    res.redirect('/photos');
+  });
+});
 
 
 module.exports = router;

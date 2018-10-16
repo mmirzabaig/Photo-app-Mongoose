@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>PHOTO</h1>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>PHOTO</h1>
+  <form action="/" method="get">
+    <input type="submit" name="" value="HOME">
+  </form>
     <h3> <%= photo.name %> </h3> </br>
     <img src="<%= photo.image %>">
-  </body>
+    <form action="/photos/<%=photo.id%>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete Photo">
+    </form>
+
+      <form action="/photos/<%=photo.id%>/edit" method="get">
+        <input type="submit" value="Edit This Photo">
+    </form>
+</body>
+
 </html>

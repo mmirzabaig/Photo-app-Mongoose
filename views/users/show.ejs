@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1><%= user.name %>'s Page</h1>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1><%= user.name %>'s Page</h1>
+  <form action="/" method="get">
+    <input type="submit" name="" value="HOME">
+  </form>
     <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
       <input type="submit" value="Delete User">
     </form>
 
-    <form action="/users/<%=user.id%>/edit" method="get">
-      <input type="submit" name="" value="Edit User Info">
+      <form action="/users/<%=user.id%>/edit" method="get">
+        <input type="submit" name="" value="Edit User Info">
     </form>
-  </body>
+</body>
+
 </html>

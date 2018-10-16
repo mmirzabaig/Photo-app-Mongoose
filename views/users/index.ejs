@@ -8,24 +8,28 @@
 
 <body>
   <h1>This is your users PAGE</h1>
-
-
-    <form action="/users/new" method="GET">
-      <input type="submit" value="Add Your Info!">
-    </form>
-      <form action="/" method="GET">
-        <input type="submit" value="HOME">
-    </form>
-<ul>
-  <% for ( let i = 0; i < users.length; i++ ) { %>
-    <li>
-  <%=  users[i].name %>
-  <form action="/users/<%=users[i].id%>" method="GET">
-    <input type="submit" value="Show <%=users[i].name%>'s Page">
+  <form action="/" method="get">
+    <input type="submit" name="" value="HOME">
   </form>
-  </li>
-<%  } %>
-</ul>
+    <form action="/photos" method="get">
+      <input type="submit" value="Photo Drop">
+    </form>
+      <form action="/users/new" method="GET">
+        <input type="submit" value="Add Your Info!">
+    </form>
+        <form action="/" method="GET">
+          <input type="submit" value="HOME">
+    </form>
+          <ul>
+            <% for ( let i = 0; i < users.length; i++ ) { %>
+            <li>
+              <%=  users[i].name %>
+              <form action="/users/<%=users[i].id%>" method="GET">
+                <input type="submit" value="Show <%=users[i].name%>'s Page">
+  </form>
+            </li>
+            <%  } %>
+          </ul>
 </body>
 
 </html>
