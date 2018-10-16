@@ -19,7 +19,10 @@
   <p> <%= photos[i].info %> </p> </br>
       <img src="<%=photos[i].image%>" alt=""> </br>
       <form action="/photos/<%=photos[i].id%>" method="get">
-        <input type="submit" name="" value="View Photo">
+        <input type="submit" value="View Photo">
+      </form>
+      <form action="/photos/<%=photos[i].id%>?_method=DELETE" method="post">
+        <input type="submit" value="Delete Photo">
       </form>
   <%  }; %>
   </body>
