@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>EDIT USER</h1>
+    <form action="/users/<%=user.id%>?_method=PUT" method="post">
+      name: <input type="text" name="name" value=""> </br>
+      passoword: <input type="text" name="password" value=""> </br>
+      <input type="submit" name="" value="Submit">
+    </form>
+  </body>
+</html>

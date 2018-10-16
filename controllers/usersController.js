@@ -50,5 +50,21 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+// create an edit page for users
+router.get('/:id/edit', (req, res) => {
+  Users.findById(req.params.id, (err, userFound) => {
+    res.render('./users/edit.ejs', {
+      user: userFound
+    })
+  })
+});
+
+// create a put request to change the user info
+
+router.put('/:id', (req, res) => {
+  Users.findByIdAndUpdate(req.params.id, req.body, (err, userFound) => {
+    res.redirect('/users');
+  });
+});
 
 module.exports = router;
