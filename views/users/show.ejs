@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <h1><%= user.name %>'s Page</h1>
+  <h1><%= user.username %>'s Page</h1>
   <form action="/" method="get">
     <input type="submit" name="" value="HOME">
   </form>
@@ -17,6 +17,10 @@
 
       <form action="/users/<%=user.id%>/edit" method="get">
         <input type="submit" name="" value="Edit User Info">
+    </form>
+
+    <form action="/users/<%=user.id%>/photos" method="get">
+        <input type="submit" value="View Photos">
     </form>
 </body>
 

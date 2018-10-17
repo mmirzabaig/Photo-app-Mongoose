@@ -5,6 +5,7 @@ const router = express.Router();
 const photoDrop = require('../models/photoDrop');
 
 
+
 router.get('/', (req, res) => {
   photoDrop.find({}, (err, photosFound) => {
     res.render('./photoDrop/index.ejs', {

@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
-
 const Users = require('../models/users');
+const photoDrop = require('../models/photoDrop');
+
+// rrrr
+
 
 // render the main users page
 router.get('/', (req, res) => {
@@ -11,7 +14,19 @@ router.get('/', (req, res) => {
       users: usersFound
     });
   });
-})
+});
+
+router.get('/:id/photos', (req, res) => {
+  Users.findById(req.params.id, (err, userFound) => {
+    photoDrop.find({}, (err, photosFound) => {
+      res.render('./users/showP.ejs', {
+        user: userFound,
+        photos: photosFound
+      });
+    });
+  });
+});
+
 
 // render the new users page
 router.get('/new', (req, res) => {

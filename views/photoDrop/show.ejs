@@ -11,7 +11,7 @@
   <form action="/" method="get">
     <input type="submit" name="" value="HOME">
   </form>
-    <h3> <%= photo.name %> </h3> </br>
+    <h3> <%= photo.username %> </h3> </br>
     <img src="<%= photo.image %>">
     <form action="/photos/<%=photo.id%>?_method=DELETE" method="POST">
       <input type="submit" value="Delete Photo">

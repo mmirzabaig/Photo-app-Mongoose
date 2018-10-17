@@ -17,15 +17,13 @@
       <form action="/users/new" method="GET">
         <input type="submit" value="Add Your Info!">
     </form>
-        <form action="/" method="GET">
-          <input type="submit" value="HOME">
-    </form>
+  
           <ul>
             <% for ( let i = 0; i < users.length; i++ ) { %>
             <li>
-              <%=  users[i].name %>
+              <%=  users[i].username %>
               <form action="/users/<%=users[i].id%>" method="GET">
-                <input type="submit" value="Show <%=users[i].name%>'s Page">
+                <input type="submit" value="Show <%=users[i].username%>'s Page">
   </form>
             </li>
             <%  } %>
