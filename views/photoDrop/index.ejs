@@ -10,35 +10,37 @@
   <h1>PHOTO DROP</h1>
   <form action="/" method="get">
     <input type="submit" name="" value="HOME">
-</form>
-    <form action="/users" method="Get">
-      <input type="submit" value="View Users">
-</form>
-      <form action="/photos/new" method="get">
+  </form>
+  <form action="/users" method="Get">
+    <input type="submit" value="View Users">
+  </form>
+  <form action="/photos/new" method="get">
 
 
-        <input type="submit" value="Add New Photo">
-</form>
+    <input type="submit" value="Add New Photo">
+  </form>
 
 
 
-        <%  for ( let i = 0; i < photos.length; i++ ) { %>
-        <h3><%=    photos[i].username %> </h3> </br>
-        <p>
-          <%= photos[i].info %>
-        </p> </br>
-        <img src="<%=photos[i].image%>" alt=""> </br>
-        <form action="/photos/<%=photos[i].id%>" method="get">
-          <input type="submit" value="View Photo">
-      </form>
-          <form action="/photos/<%=photos[i].id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Photo">
-      </form>
+  <%  for ( let i = 0; i < photos.length; i++ ) { %>
+  <h3>
+    <%=    photos[i].username %>
+  </h3> </br>
+  <p>
+    <%= photos[i].info %>
+  </p> </br>
+  <img src="<%=photos[i].image%>" alt=""> </br>
+  <form action="/photos/<%=photos[i].id%>" method="get">
+    <input type="submit" value="View Photo">
+  </form>
+  <form action="/photos/<%=photos[i].id%>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Photo">
+  </form>
 
-            <form action="/photos/<%=photos[i].id%>/edit" method="get">
-              <input type="submit" value="Edit This Photo">
-      </form>
-              <%  }; %>
+  <form action="/photos/<%=photos[i].id%>/edit" method="get">
+    <input type="submit" value="Edit This Photo">
+  </form>
+  <%  }; %>
 </body>
 
 </html>

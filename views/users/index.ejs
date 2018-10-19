@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
 </head>
 
 <body>
@@ -11,23 +13,24 @@
   <form action="/" method="get">
     <input type="submit" name="" value="HOME">
   </form>
-    <form action="/photos" method="get">
-      <input type="submit" value="Photo Drop">
-    </form>
-      <form action="/users/new" method="GET">
-        <input type="submit" value="Add Your Info!">
-    </form>
-  
-          <ul>
-            <% for ( let i = 0; i < users.length; i++ ) { %>
-            <li>
-              <%=  users[i].username %>
-              <form action="/users/<%=users[i].id%>" method="GET">
-                <input type="submit" value="Show <%=users[i].username%>'s Page">
+  <form action="/photos" method="get">
+    <input type="submit" value="Photo Drop">
   </form>
-            </li>
-            <%  } %>
-          </ul>
+  <form action="/users/new" method="GET">
+    <input type="submit" value="Add Your Info!">
+  </form>
+  <li><a href="/auth/logout">Logout</a></li>
+
+  <ul>
+    <% for ( let i = 0; i < users.length; i++ ) { %>
+    <li>
+      <%=  users[i].username %>
+      <form action="/users/<%=users[i].id%>" method="GET">
+        <input type="submit" value="Show <%=users[i].username%>'s Page">
+      </form>
+    </li>
+    <%  } %>
+  </ul>
 </body>
 
 </html>

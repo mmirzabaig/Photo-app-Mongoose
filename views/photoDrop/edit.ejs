@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>EDIT PHOTO</h1>
-    <form action="/photos/<%=photo.id%>?_method=PUT" method="POST">
-      username: <input type="text" name="username"> </br>
-      image: <input type="text" name="image" value="<%=photo.image%>"> </br>
-      info: <input type="text" name="info" value="Picture Info"> </br>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>EDIT PHOTO</h1>
+  <form action="/photos/<%=photo.id%>?_method=PUT" method="POST">
+    username: <input type="text" name="username"> </br>
+    image: <input type="text" name="image" value="<%=photo.image%>"> </br>
+    info: <input type="text" name="info" value="Picture Info"> </br>
     <input type="submit" value="Submit">
-    </form>
-  </body>
+  </form>
+</body>
+
 </html>

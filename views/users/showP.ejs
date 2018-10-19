@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>PHOTOS</h1>
-    <form action="/" method="GET">
-      <input type="submit" value="HOME">
-</form>
-     <%= user.username %> </br>
 
-    <% for( let i = 0; i < photos.length; i++ ) { %>
-    <%  if (photos[i].username === user.username) {%> </br>
-      <%= photos[i].info %> </br>
-      <img src="<%= photos[i].image %>"> </br>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>PHOTOS</h1>
+  <form action="/" method="GET">
+    <input type="submit" value="HOME">
+  </form>
+  <%= user.username %> </br>
+
+  <% for( let i = 0; i < photos.length; i++ ) { %>
+  <%  if (photos[i].username === user.username) {%> </br>
+  <%= photos[i].info %> </br>
+  <img src="<%= photos[i].image %>"> </br>
   <%  } %>
   <%   }  %>
 
-  </body>
+</body>
+
 </html>
